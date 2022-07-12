@@ -4,9 +4,9 @@ const objCpCybos = new winax.Object("CpUtil.CpCybos.1", {
 });
 const connectState = objCpCybos.IsConnect;
 if (connectState === 0) {
-  console.log("연결 안됨");
+  //console.log("연결 안됨");
 } else {
-  console.log("연결 됨");
+  //console.log("연결 됨");
 }
 
 const objStockMst = new winax.Object("Dscbo1.StockMst", {

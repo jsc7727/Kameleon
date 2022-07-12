@@ -52,7 +52,7 @@ const getPoolRoi_controller = async (req: Request, res: Response) => {
     const exchangeAddress = req.query.exchangeAddress as string;
     const { data } = await getRoiList_service({ exchangeAddress });
     const result = calcPoolRoi(data);
-    console.log(result);
+    // console.log(result);
     return res.status(200).json({
       success: true,
       data: result,

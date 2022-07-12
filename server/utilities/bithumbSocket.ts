@@ -19,12 +19,12 @@ ws.on("open", () => {
     tickTypes: ["30M"],
   };
   ws.send(JSON.stringify(request));
-  console.log("보냄");
+  //console.log("보냄");
 });
 
 ws.on("message", (e: { data: Iterable<number> }) => {
   const data = JSON.parse(e.toString());
   klaytnPrice = data?.content?.closePrice;
-  console.log("받음", klaytnPrice);
+  //console.log("받음", klaytnPrice);
 });
 export { getFirstTicker, klaytnPrice };

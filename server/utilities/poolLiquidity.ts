@@ -8,7 +8,7 @@ const checkPoolLiquidity = async () => {
   try {
     const { success, data } = await getPoolLiquidity();
     if (success && data !== null) {
-      console.log(data);
+      //console.log(data);
       data.map(
         ({
           exchangeAddress: address,
@@ -54,7 +54,7 @@ const calcPoolRoi = ({ first, last }) => {
   const ROI =
     (lastPoolData.poolSize / firstPoolData.poolSize) ^
     ((365 / (+lastDate - +firstDate) - 1) * 100);
-  console.log({ address: firstPoolData.address, roi: ROI });
+  //console.log({ address: firstPoolData.address, roi: ROI });
   return { address: firstPoolData.address, roi: ROI };
 };
 export { checkPoolLiquidity, checkBulkPoolLiquidity, calcPoolRoi };

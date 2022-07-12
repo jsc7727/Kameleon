@@ -12,7 +12,7 @@ const stockPrice = async () => {
       contractAddress: OracleAddress,
       methodName: "getStockCodeList",
     });
-    console.log(stocklist);
+    //console.log(stocklist);
     const uri = `https://polling.finance.naver.com/api/realtime?query=SERVICE_ITEM:${stocklist.join(
       ","
     )}`;
@@ -21,7 +21,7 @@ const stockPrice = async () => {
     });
     const result = iconv.decode(html.data, "EUC-KR").toString();
     const datas = JSON.parse(result).result.areas[0].datas;
-    console.log(datas);
+    //console.log(datas);
     if (datas !== undefined) {
       const result = datas.map(
         ({
@@ -38,7 +38,7 @@ const stockPrice = async () => {
           stockName: nm,
         })
       );
-      console.log(result);
+      //console.log(result);
       return result;
     } else {
       return [];

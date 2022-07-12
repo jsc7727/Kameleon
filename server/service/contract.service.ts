@@ -20,7 +20,7 @@ const recordPoolLiquidity_service = async (
 ): Promise<boolean> => {
   try {
     const { address, poolSize } = data;
-    console.log(address, poolSize);
+    //console.log(address, poolSize);
     const poolLiquidity = PoolLiquidity.create({
       poolSize,
       address,
@@ -57,7 +57,7 @@ const getPoolLiquidity_service = async ({
       .where("address = :address", { address: exchangeAddress })
       .getMany();
 
-    console.log(data);
+    //console.log(data);
     return {
       success: true,
       data,
@@ -94,7 +94,7 @@ const getRoiList_service = async ({
       .limit(limit)
       .getOne();
 
-    console.log(first, last);
+    //console.log(first, last);
     return {
       success: true,
       data: { first, last },

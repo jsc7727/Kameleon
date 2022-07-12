@@ -14,7 +14,7 @@ const getPoolLiquidity = async (): Promise<IPoolLiquidity_ReturnType> => {
     contractAddress: FactoryAddress,
     methodName: "getAllExchangeList",
   });
-  console.log(allExchangeList);
+  //console.log(allExchangeList);
   if (allExchangeList.length > 0) {
     const result: Array<IPoolLiquidity> = await Promise.all(
       allExchangeList.map(async (exchangeAddress: string) => {
@@ -24,13 +24,13 @@ const getPoolLiquidity = async (): Promise<IPoolLiquidity_ReturnType> => {
           methodName: "balanceOf",
           parameters: [exchangeAddress],
         });
-        console.log("checkPoolLiquidity res1", res1);
+        //console.log("checkPoolLiquidity res1", res1);
         const totalSupply = await callContract({
           contractName: "Exchange",
           contractAddress: exchangeAddress,
           methodName: "totalSupply",
         });
-        console.log("checkPoolLiquidity totalSupply", totalSupply);
+        //console.log("checkPoolLiquidity totalSupply", totalSupply);
         const exchangeBalance = await getBalance({ address: exchangeAddress });
         const calcResult = +res1 + +exchangeBalance / +totalSupply || 0;
         return { exchangeAddress, poolLiquidity: calcResult, totalSupply };

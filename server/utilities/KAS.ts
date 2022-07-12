@@ -28,7 +28,7 @@ const deployContract = async ({
       byteCodeList[contractName],
       ...parameters
     );
-    console.log(
+    //console.log(
       `The address of deployed smart contract: ${delployedContract.options.address}`
     );
     return delployedContract.options.address;
@@ -61,7 +61,7 @@ const callContract = async ({
       contractAddress
     );
     const callResult = await contract.call(methodName, ...parameters);
-    console.log(`Result of calling ${methodName} with key: ${callResult}`);
+    //console.log(`Result of calling ${methodName} with key: ${callResult}`);
     return callResult;
   } catch (error) {
     console.log(error);
@@ -102,7 +102,7 @@ const sendContract = async ({
       methodName,
       ...parameters
     );
-    console.log(receipt?.blockHash);
+    //console.log(receipt?.blockHash);
     return receipt;
   } catch (error) {
     console.log(error);
