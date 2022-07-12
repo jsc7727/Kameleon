@@ -112,7 +112,7 @@ var getPoolRoi_controller = function (req, res) { return __awaiter(void 0, void 
             case 1:
                 data = (_a.sent()).data;
                 result = (0, poolLiquidity_1.calcPoolRoi)(data);
-                console.log(result);
+                // console.log(result);
                 return [2 /*return*/, res.status(200).json({
                         success: true,
                         data: result,

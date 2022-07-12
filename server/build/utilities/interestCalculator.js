@@ -50,7 +50,6 @@ var getPoolLiquidity = function () { return __awaiter(void 0, void 0, void 0, fu
                 })];
             case 1:
                 allExchangeList = _a.sent();
-                console.log(allExchangeList);
                 if (!(allExchangeList.length > 0)) return [3 /*break*/, 3];
                 return [4 /*yield*/, Promise.all(allExchangeList.map(function (exchangeAddress) { return __awaiter(void 0, void 0, void 0, function () {
                         var res1, totalSupply, exchangeBalance, calcResult;
@@ -64,7 +63,6 @@ var getPoolLiquidity = function () { return __awaiter(void 0, void 0, void 0, fu
                                     })];
                                 case 1:
                                     res1 = _a.sent();
-                                    console.log("checkPoolLiquidity res1", res1);
                                     return [4 /*yield*/, (0, KAS_1.callContract)({
                                             contractName: "Exchange",
                                             contractAddress: exchangeAddress,
@@ -72,7 +70,6 @@ var getPoolLiquidity = function () { return __awaiter(void 0, void 0, void 0, fu
                                         })];
                                 case 2:
                                     totalSupply = _a.sent();
-                                    console.log("checkPoolLiquidity totalSupply", totalSupply);
                                     return [4 /*yield*/, (0, KAS_1.getBalance)({ address: exchangeAddress })];
                                 case 3:
                                     exchangeBalance = _a.sent();

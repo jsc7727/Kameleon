@@ -49,7 +49,6 @@ var updateStockPrice = function () { return __awaiter(void 0, void 0, void 0, fu
             case 0: return [4 /*yield*/, (0, naverApi_1.stockPrice)()];
             case 1:
                 result = _a.sent();
-                console.log(result);
                 if (!(result.length > 0 && bithumbSocket_1.klaytnPrice !== undefined)) return [3 /*break*/, 3];
                 price_1 = +bithumbSocket_1.klaytnPrice;
                 return [4 /*yield*/, (0, KAS_1.sendContract)({
@@ -59,8 +58,8 @@ var updateStockPrice = function () { return __awaiter(void 0, void 0, void 0, fu
                         parameters: [
                             result.map(function (_a) {
                                 var nowValue = _a.nowValue;
-                                console.log(price_1);
-                                console.log(nowValue / price_1);
+                                //console.log(price);
+                                //console.log(nowValue / price);
                                 return KAS_1.caver.utils.convertToPeb((nowValue / price_1).toString(), "KLAY");
                             }),
                         ],

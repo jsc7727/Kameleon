@@ -73,7 +73,9 @@ var deployContract = function (_a) {
                             contractData_1.byteCodeList[contractName]], parameters, false))];
                 case 1:
                     delployedContract = _c.sent();
-                    console.log("The address of deployed smart contract: " + delployedContract.options.address);
+                    //console.log(
+                    //   `The address of deployed smart contract: ${delployedContract.options.address}`
+                    // );
                     return [2 /*return*/, delployedContract.options.address];
                 case 2:
                     error_1 = _c.sent();
@@ -101,7 +103,7 @@ var callContract = function (_a) {
                     return [4 /*yield*/, contract.call.apply(contract, __spreadArray([methodName], parameters, false))];
                 case 1:
                     callResult = _c.sent();
-                    console.log("Result of calling " + methodName + " with key: " + callResult);
+                    //console.log(`Result of calling ${methodName} with key: ${callResult}`);
                     return [2 /*return*/, callResult];
                 case 2:
                     error_2 = _c.sent();
@@ -134,7 +136,7 @@ var sendContract = function (_a) {
                             methodName], parameters, false))];
                 case 1:
                     receipt = _d.sent();
-                    console.log(receipt === null || receipt === void 0 ? void 0 : receipt.blockHash);
+                    //console.log(receipt?.blockHash);
                     return [2 /*return*/, receipt];
                 case 2:
                     error_3 = _d.sent();

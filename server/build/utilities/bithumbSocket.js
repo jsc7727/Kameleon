@@ -66,12 +66,12 @@ ws.on("open", function () {
         tickTypes: ["30M"],
     };
     ws.send(JSON.stringify(request));
-    console.log("보냄");
+    //console.log("보냄");
 });
 ws.on("message", function (e) {
     var _a;
     var data = JSON.parse(e.toString());
     exports.klaytnPrice = klaytnPrice = (_a = data === null || data === void 0 ? void 0 : data.content) === null || _a === void 0 ? void 0 : _a.closePrice;
-    console.log("받음", klaytnPrice);
+    //console.log("받음", klaytnPrice);
 });
 //# sourceMappingURL=bithumbSocket.js.map

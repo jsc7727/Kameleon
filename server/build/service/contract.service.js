@@ -67,7 +67,6 @@ var recordPoolLiquidity_service = function (data) { return __awaiter(void 0, voi
             case 0:
                 _a.trys.push([0, 2, , 3]);
                 address = data.address, poolSize = data.poolSize;
-                console.log(address, poolSize);
                 poolLiquidity = PoolLiquidity_1.PoolLiquidity.create({
                     poolSize: poolSize,
                     address: address,
@@ -122,7 +121,7 @@ var getPoolLiquidity_service = function (_a) {
                             .getMany()];
                 case 1:
                     data = _b.sent();
-                    console.log(data);
+                    //console.log(data);
                     return [2 /*return*/, {
                             success: true,
                             data: data,
@@ -166,7 +165,7 @@ var getRoiList_service = function (_a) {
                             .getOne()];
                 case 2:
                     last = _c.sent();
-                    console.log(first, last);
+                    //console.log(first, last);
                     return [2 /*return*/, {
                             success: true,
                             data: { first: first, last: last },

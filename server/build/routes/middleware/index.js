@@ -42,7 +42,7 @@ var temp = function (req, res, next) { return __awaiter(void 0, void 0, void 0, 
         try {
         }
         catch (err) {
-            console.log(err);
+            //console.log(err);
             res.status(401).json({
                 success: false,
                 data: null,

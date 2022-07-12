@@ -58,7 +58,6 @@ var stockPrice = function () { return __awaiter(void 0, void 0, void 0, function
                     })];
             case 1:
                 stocklist = _a.sent();
-                console.log(stocklist);
                 uri = "https://polling.finance.naver.com/api/realtime?query=SERVICE_ITEM:" + stocklist.join(",");
                 return [4 /*yield*/, axios_1.default.get(uri, {
                         responseType: "arraybuffer",
@@ -67,7 +66,7 @@ var stockPrice = function () { return __awaiter(void 0, void 0, void 0, function
                 html = _a.sent();
                 result = iconv_lite_1.default.decode(html.data, "EUC-KR").toString();
                 datas = JSON.parse(result).result.areas[0].datas;
-                console.log(datas);
+                //console.log(datas);
                 if (datas !== undefined) {
                     result_1 = datas.map(function (_a) {
                         var codeNumber = _a.cd, nowValue = _a.nv, nm = _a.nm;
@@ -77,7 +76,7 @@ var stockPrice = function () { return __awaiter(void 0, void 0, void 0, function
                             stockName: nm,
                         });
                     });
-                    console.log(result_1);
+                    //console.log(result);
                     return [2 /*return*/, result_1];
                 }
                 else {

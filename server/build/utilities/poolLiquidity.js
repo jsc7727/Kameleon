@@ -49,7 +49,7 @@ var checkPoolLiquidity = function () { return __awaiter(void 0, void 0, void 0, 
             case 1:
                 _a = _b.sent(), success = _a.success, data = _a.data;
                 if (success && data !== null) {
-                    console.log(data);
+                    //console.log(data);
                     data.map(function (_a) {
                         var address = _a.exchangeAddress, poolSize = _a.poolLiquidity;
                         (0, contract_service_1.recordPoolLiquidity_service)({
@@ -106,7 +106,7 @@ var calcPoolRoi = function (_a) {
     var lastDate = new Date(lastPoolData.createdAt).getDate;
     var ROI = (lastPoolData.poolSize / firstPoolData.poolSize) ^
         ((365 / (+lastDate - +firstDate) - 1) * 100);
-    console.log({ address: firstPoolData.address, roi: ROI });
+    //console.log({ address: firstPoolData.address, roi: ROI });
     return { address: firstPoolData.address, roi: ROI };
 };
 exports.calcPoolRoi = calcPoolRoi;

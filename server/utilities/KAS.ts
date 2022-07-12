@@ -29,8 +29,8 @@ const deployContract = async ({
       ...parameters
     );
     //console.log(
-      `The address of deployed smart contract: ${delployedContract.options.address}`
-    );
+    //   `The address of deployed smart contract: ${delployedContract.options.address}`
+    // );
     return delployedContract.options.address;
   } catch (error) {
     console.log(error);
